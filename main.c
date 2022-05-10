@@ -73,6 +73,11 @@ void sig_func(int signum) { // Called when a thread catches a signal
             }
         }
     }
+    
+    if(teamNum == 0) {
+        printf("I am the Main Thread and I caught Signal number %d.\n",signum);
+        return;
+    }
 
     signalNum[teamNum-1] = signum; // Notify team members
     for(int i=0;i<THREADS_PER_TEAM;i++) {
@@ -167,7 +172,7 @@ int main() {
             pthread_create(&tid[i][j],0,running,NULL);
         }
     }
-    
+    //mainThread = 1;
     sleep(3); // Give time for threads to set up
     
     // TEST SIGNALS HERE
