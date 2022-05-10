@@ -38,6 +38,7 @@ void *running() { //Default function run by each thread
         sigaddset(&mask,SIGABRT);
         sigaddset(&mask,SIGILL);
         sigaddset(&mask,SIGHUP);
+        sigaddset(&mask,SIGTSTP);
     }
     else if(teamNum == 3) {
         sigaddset(&mask,SIGABRT);
