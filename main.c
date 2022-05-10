@@ -134,6 +134,7 @@ void sig_func3(int sigNum) { // Called when signals are to be unblocked
         sigaddset(&mask,SIGABRT);
         sigaddset(&mask,SIGILL);
         sigaddset(&mask,SIGHUP);
+        sigaddset(&mask,SIGTSTP);
     }
     else if(teamNum == 3) {
         sigaddset(&mask,SIGABRT);
